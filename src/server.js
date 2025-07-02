@@ -14,7 +14,7 @@ app.use(express.json());
 
 
 
-const allowedOrigins = ["http://localhost:8081", "http://localhost:3000","https://wallet-api-1ilx.onrender.com","http://192.168.0.101:8081"];
+const allowedOrigins = ["http://192.168.0.101"];
 app.use(cors({
   origin: allowedOrigins,
 }));
