@@ -14,7 +14,7 @@ app.use(express.json());
 
 
 
-const allowedOrigins = ["http://localhost:8081", "http://localhost:3000","http://192.168.0.101:5000/api"];
+const allowedOrigins = ["http://localhost:8081", "http://localhost:3000","http://192.168.0.101:8081/api"];
 app.use(cors({
   origin: allowedOrigins,
 }));
