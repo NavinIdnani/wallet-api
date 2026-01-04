@@ -1,0 +1,13 @@
+# dependencies
+node_modules/
+
+# env files
+.env
+.env.*
+
+# expo
+.expo/
+
+# editor / OS
+.vscode/
+.DS_Store
