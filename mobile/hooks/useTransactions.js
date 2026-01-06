@@ -62,17 +62,26 @@ export const useTransactions = () => {
   }, [fetchTransactions, fetchSummary, isLoaded, userId]);
 
 
-const deleteTransactions = async(id)=>{
-    try{
-        const response=await fetch(`${API_URL}/transactions/${id}`,{method:"DELETE"});
-        if(!response.ok) throw new Error("Failed to delete transactions");
+const deleteTransactions = async (id) => {
+  console.log("CALLING DELETE API FOR ID:", id);
 
-        loadData();
-        Alert.alert("Success","Transaction deleted succesfully");
-    }catch(err){
-        console.log("Error deleting transactions",err);
-        Alert.alert("Error",err.message);
+  try {
+    const response = await fetch(
+      `${API_URL}/transactions/${id}`,
+      { method: "DELETE" }
+    );
+
+    console.log("DELETE RESPONSE STATUS:", response.status);
+
+    if (!response.ok) {
+      throw new Error("Delete failed");
     }
+
+    await loadData();
+  } catch (err) {
+    console.error("DELETE ERROR:", err);
+  }
 };
+
     return {transactions,summary,isLoading,loadData,deleteTransactions};
 };
