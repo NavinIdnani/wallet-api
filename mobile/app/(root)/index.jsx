@@ -12,11 +12,16 @@ import PageLoader from "../../components/PageLoader";
 import { styles } from "../../assets/styles/home.styles";
 import { Image } from "react-native";
 import { BalanceCard } from "../../components/BalanceCard";
+import { useFocusEffect } from "expo-router";
+import {React} from "react";
+import { useCallback } from "react";
+
 import { Alert } from "react-native";
 
 
 export default function Page() {
   const { user } = useUser();
+   const { isSignedIn, isLoaded } = useUser();
   const router = useRouter();
   const [refreshing,setRefreshing]=useState(false);
 
@@ -29,18 +34,31 @@ export default function Page() {
     await loadData();
     setRefreshing(false);
   }
-  useEffect(() => {
-    if (user?.id) {
-      loadData();
-    }
-  }, [user?.id, loadData]);
 
-  const handleDelete=(id)=>{
-     Alert.alert("Delete Transactions","Are you sure you want to delete this transactions",[
-      {text:"Cancel",style:"cancel"},
-      {text:"Delete",style:"destructive",onPress:()=>deleteTransactions(id)},
-    ]);
-  } 
+  useFocusEffect(
+  useCallback(() => {
+    loadData();
+  }, [])
+);
+
+  // useEffect(() => {
+  //   if (user?.id) {
+  //     loadData();
+  //   }
+  // }, [user?.id, loadData]);
+
+ const handleDelete = (id) => {
+  console.log("DELETE CLICKED:", id);
+
+  if (window.confirm("Are you sure you want to delete this transaction?")) {
+    deleteTransactions(id);
+  }
+};
+
+
+
+   if (!isLoaded) return null;
+  if (!isSignedIn) return <Redirect href="/sign-in" />;
 
   if (isLoading && !refreshing) return <PageLoader />;
 
@@ -92,8 +110,11 @@ export default function Page() {
         style={styles.transactionsList}
         contentContainerStyle={styles.transactionsListContent}
         data={transactions}
+        keyExtractor={(item) => item.id.toString()}
         renderItem={({item})=>(
+
           <TransactionItem item={item} 
+          key={item.id}
           onDelete={handleDelete}/>
         )}
         ListEmptyComponent={<NoTransactionsFound/>}

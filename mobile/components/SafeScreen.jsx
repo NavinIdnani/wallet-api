@@ -2,6 +2,7 @@ import { View} from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import {COLORS} from "@/constants/colors";
+import { Platform } from "react-native";
 
 const SafeScreen = ({ children }) => {
   const insets = useSafeAreaInsets();
@@ -9,7 +10,7 @@ const SafeScreen = ({ children }) => {
   return (
     <View
       style={{
-        paddingTop: insets.top,
+       paddingTop: Platform.OS === "web" ? 0 : insets.top,
         flex: 1,
         backgroundColor: COLORS.background,
       }}

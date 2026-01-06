@@ -20,7 +20,7 @@ export const TransactionItem=({ item, onDelete})=>{
     const iconName=CATEGORY_ICONS[item.category] || "pricetag-outline";
 
     return(
-        <View style={styles.transactionCard} key={item.id}>
+        <View style={styles.transactionCard}>
             <TouchableOpacity style={styles.transactionContent}>
                 <View style={styles.categoryIconContainer}>
                     <Ionicons name={iconName} size={22} color={isIncome ? COLORS.income : COLORS.expense} />

@@ -22,7 +22,7 @@ export async function createTransaction(req, res) {
         try {
           const { title, amount, category, user_id } = req.body;
       
-          if (!title || !amount || !category || !amount === undefined) {
+          if (!title || !user_id || !category || amount === undefined) {
             return res.status(400).json({ message: "All fields are required" });
           }
           const transaction = await sql`
@@ -40,6 +40,7 @@ export async function createTransaction(req, res) {
 
 export async function deleteTransaction(req, res){
         try {
+          console.log("DELETE ID:", req.params.id); // ✅ ADD HERE
           const { id } = req.params;
       
           if (isNaN(parseInt(id))) {

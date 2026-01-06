@@ -1,23 +1,31 @@
-import { useClerk } from '@clerk/clerk-expo'
-import { Text, TouchableOpacity } from 'react-native'
-import { styles } from '../assets/styles/home.styles'
-import { Ionicons } from '@expo/vector-icons'
-import { COLORS } from '../constants/colors'
-import { Alert } from 'react-native'
+import { useClerk } from "@clerk/clerk-expo";
+import { TouchableOpacity, Platform } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
+import { COLORS } from "../constants/colors";
+import { styles } from "../assets/styles/home.styles";
+import { useRouter } from "expo-router";
 
 export const SignOutButton = () => {
-  // Use `useClerk()` to access the `signOut()` function
-  const { signOut } = useClerk()
+  const { signOut } = useClerk();
+  const router = useRouter();
+
   const handleSignOut = async () => {
-    Alert.alert("Logout","Are you sure you want to logout",[
-      {text:"Cancel",style:"cancel"},
-      {text:"Logout",style:"destructive",onPress:signOut},
-    ]);
+    // ✅ Web-safe confirmation
+    if (Platform.OS === "web") {
+      const confirmed = window.confirm("Are you sure you want to logout?");
+      if (!confirmed) return;
+    }
+
+    // ✅ Destroy session
+    await signOut();
+
+    // ✅ Force navigation
+    router.replace("/sign-in");
   };
 
   return (
-    <TouchableOpacity style={styles.logoutButton}onPress={handleSignOut}>
-      <Ionicons name="log-out-outline" size={22} color={COLORS.text}/>
+    <TouchableOpacity style={styles.logoutButton} onPress={handleSignOut}>
+      <Ionicons name="log-out-outline" size={22} color={COLORS.text} />
     </TouchableOpacity>
-  )
-}
+  );
+};

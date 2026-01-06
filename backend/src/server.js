@@ -9,21 +9,27 @@ dotenv.config();
 
 const app = express();
 
-app.use(rateLimiter);
-app.use(express.json());
 
 
 
-// const allowedOrigins = ["http://192.168.0.101"];
+// const allowedOrigins = ["http://192.168.0.105"];
 // app.use(cors({
 //   origin: allowedOrigins,
 // }));
 
-const allowedOrigins = "*";
+
+
 app.use(cors({
-  origin: allowedOrigins,
+  origin: (origin, callback) => {
+    callback(null, true); // allow all for now
+  },
+  credentials: true,
 }));
 
+
+
+app.use(express.json());
+app.use("/api",rateLimiter);
 
 
 const PORT = process.env.PORT || 5000;
