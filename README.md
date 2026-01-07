@@ -29,7 +29,7 @@ This project focuses on backend architecture, authentication, database design, a
 
   Backend:
 
-  Node.js, Express.js 
+    Node.js, Express.js 
     
     PostgreSQL (Neon)
     
@@ -39,7 +39,7 @@ This project focuses on backend architecture, authentication, database design, a
     
     REST APIs
     
-    Mobile: 
+  Mobile: 
     
     React Native
     
