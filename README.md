@@ -26,7 +26,9 @@ This project focuses on backend architecture, authentication, database design, a
 * Environment-based configuration using .env
 
 🛠 Tech Stack
+
 Backend:
+
 Node.js, Express.js 
 
 PostgreSQL (Neon)
