@@ -27,14 +27,22 @@ This project focuses on backend architecture, authentication, database design, a
 
 🛠 Tech Stack
 Backend:
-# Node.js, Express.js
-# PostgreSQL (Neon)
-# Redis (Rate Limiting)
+Node.js, Express.js 
+
+PostgreSQL (Neon)
+
+Redis (Rate Limiting)
+
 Clerk (Authentication)
+
 REST APIs
+
 Mobile
+
 React Native
+
 Expo
+
 React Navigation
 
 🚀 What This Project Demonstrates
