@@ -47,6 +47,14 @@ Expo
 
 React Navigation
 
+Mobile
+
+React Native
+
+Expo
+
+React Navigation
+
 🚀 What This Project Demonstrates
 * Designing and consuming backend APIs from a mobile client
 * Secure authentication with email verification
