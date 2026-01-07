@@ -3,6 +3,11 @@
 A full-stack mobile application designed to track personal expenses and budgets, backed by a secure API and a production-grade PostgreSQL database.
 This project focuses on backend architecture, authentication, database design, and API integration with a mobile client, rather than just UI.
 
+🔗 Repository & Live Demo
+
+    GitHub: https://github.com/NavinIdnani/wallet-api
+    Live App: https://wallet-frontend-fcqw.onrender.com/
+
 🔐 Authentication & User Management
 * Secure authentication using Clerk with email verification
 * Signup & login flow with 6-digit email OTP
