@@ -29,24 +29,29 @@ This project focuses on backend architecture, authentication, database design, a
 
   Backend:
 
-    Node.js, Express.js 
+    Node.js
+    
+    Express.js 
     
     PostgreSQL (Neon)
     
     Redis (Rate Limiting)
     
-    Clerk (Authentication)
+    Clerk (Server-Side Authentication)
     
     REST APIs
     
   Mobile: 
     
-    React Native
+    Expo (React Native Web)
     
-    Expo
+    Expo Router
     
-    React Navigation
-
+    Clerk Authentication
+    
+    React Hooks
+    
+    Render (Static Site)
 
 🚀 What This Project Demonstrates
 * Designing and consuming backend APIs from a mobile client
