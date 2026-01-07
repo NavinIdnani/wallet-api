@@ -39,8 +39,6 @@ Clerk (Authentication)
 
 REST APIs
 
-
-
 Mobile: 
 
 React Native
