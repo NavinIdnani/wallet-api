@@ -4,10 +4,10 @@ A full-stack mobile application designed to track personal expenses and budgets,
 This project focuses on backend architecture, authentication, database design, and API integration with a mobile client, rather than just UI.
 
 🔐 Authentication & User Management
-> Secure authentication using Clerk with email verification
-> Signup & login flow with 6-digit email OTP
-> User-specific data isolation (each user sees only their own transactions)
-> Secure logout and session handling
+* Secure authentication using Clerk with email verification
+* Signup & login flow with 6-digit email OTP
+* User-specific data isolation (each user sees only their own transactions)
+* Secure logout and session handling
 
 💼 Core Application Features
 * Home screen displaying current balance and transaction history.
