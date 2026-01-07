@@ -39,7 +39,9 @@ Clerk (Authentication)
 
 REST APIs
 
-Mobile
+
+
+Mobile: 
 
 React Native
 
@@ -47,13 +49,6 @@ Expo
 
 React Navigation
 
-Mobile
-
-React Native
-
-Expo
-
-React Navigation
 
 🚀 What This Project Demonstrates
 * Designing and consuming backend APIs from a mobile client
