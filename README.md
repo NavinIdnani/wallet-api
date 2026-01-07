@@ -11,10 +11,15 @@ This project focuses on backend architecture, authentication, database design, a
 
 💼 Core Application Features
 -> Home screen displaying current balance and transaction history.
+
 -> Create income and expense transactions via API.
+
 -> Automatic balance recalculation on every transaction.
+
 -> Delete transactions with real-time balance update.
+
 -> Pull-to-refresh implemented from scratch.
+
 -> Clean navigation flow using React Navigation.
 
 🧠 Backend & Database Architecture
